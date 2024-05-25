@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs")  %>
+
+  <body class="text-center">
+    <%- include("../partials/nav.ejs")  %>
+    <h1>Author List</h1>
+    <% for(let i = 0; i < authorList.length; i++){%>
+      <a class="btn btn-success" href="/updateAuthor?authorId=<%= authorList[i].authorId%>">Update</a> <%= authorList[i].firstName%>  <%= authorList[i].lastName%> <a class="btn btn-danger" href="/deleteAuthor?authorId=<%= authorList[i].authorId%>">Delete</a><br><br>
+    <%}%>
+</body>
+</html>

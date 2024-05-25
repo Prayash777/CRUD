@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head.ejs")  %>
+
+<body>
+  <%- include("../partials/nav.ejs")  %>
+    <h2>Updating New Author</h2>
+    
+    <form method="POST" action="/updateAuthor" >
+        <input name="authorId" type = "hidden" value="<%= authorInfo.authorId%>">
+        First name:
+        <input name="fname" type="text" value = "<%= authorInfo.firstName%>"<br>
+        Last name:
+        <input name="lname" type="text" value = "<%= authorInfo.lastName%>"required><br>
+        DOB: 
+        <input name="dob" type="date" value="<%=authorInfo.dobFormatted%>"><br>
+        DOD:
+        <input name="dod" type="date" value="<%=authorInfo.dodFormatted%>"><br>
+        Sex: <br>
+        <input name="sex" type="radio" id ="F" value="F">F
+        <input name="sex" type="radio" id="M" value="M">M
+      <br>
+        Profession: 
+        <input name="profession" type="text" value="<%=authorInfo.profession%>"><br>
+        Country:
+        <input name="country" type="text" value="<%=authorInfo.country%>"><br>
+        Portrait:
+        <textarea name="portrait"><%=authorInfo.portrait%></textarea><br>
+        Biography: 
+        <textarea name="biography"> <%=authorInfo.biography%></textarea>
+      <br>
+
+        <button>Update Author</button>
+    </form>
+<script>
+  document.querySelector("form").addEventListener("submit",validateAuthor);
+  let sex =  <%=authorInfo.sex%>;
+
+  document.getElementById(`${sex.value}`).checked = true;
+  
+    function validateAuthor(event){
+    //alert("validation author info!");
+    let errors = false;
+    let fName = document.querySelector("input[name=fname]").value;
+    //alert(fName);
+
+    if(fName.length < 2){
+      errors = true;
+    }
+    if(errors){
+      event.preventDefault(); //prevents form submission
+    }
+  }
+</script>
+
+</body>
+</html>

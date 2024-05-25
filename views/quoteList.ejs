@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs")  %>
+
+  <body class="text-center">
+    <%- include("../partials/nav.ejs")  %>
+    <h1>Quote List</h1>
+    <% for(let i = 0; i < quoteList.length; i++){%>
+      <a class="btn btn-success" href="/updateQuote?quoteId=<%= quoteList[i].quoteId%>">Update</a> "<%= quoteList[i].quote%>" <%= quoteList[i].quoteId%> <a class="btn btn-danger" href="/deleteQuote?quoteId=<%= quoteList[i].quoteId%>">Delete</a><br><br>
+    <%}%>
+</body>
+</html>

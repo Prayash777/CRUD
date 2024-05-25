@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head.ejs")  %>
+<body class="text-center">
+    <h1>Login Screen</h1>
+
+    <form method="POST" action="/login" autocomplete="off">
+      Username:
+      <input type="text" name="username">
+      <br>
+      <br>
+      Password:
+      <input type="password" name="password">
+      <br><br>
+      <button class="btn btn-primary">
+        Login
+      </button>
+    </form>
+    <% if(typeof(error) != "undefined") {%>
+      <%= error %>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Installation
+> `npm install --save @types/set-blocking`
+
+# Summary
+This package contains type definitions for set-blocking (https://github.com/yargs/set-blocking#readme).
+
+# Details
+Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/set-blocking.
+## [index.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/set-blocking/index.d.ts)
+````ts
+declare function setBlocking(setIsBlocked: boolean): void;
+
+export = setBlocking;
+
+````
+
+### Additional Details
+ * Last updated: Tue, 07 Nov 2023 15:11:36 GMT
+ * Dependencies: none
+
+# Credits
+These definitions were written by [Ankan Bhattacharya](https://github.com/Ankan002).

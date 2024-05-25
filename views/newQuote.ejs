@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("../partials/head.ejs")  %>
+
+<body class="text-center">
+  <%- include("../partials/nav.ejs")  %>
+    <br><br>
+    <h1>Add Quote</h1>
+    
+  <form method="POST" action="/addQuote">
+      Author:
+       <select name="authorId">
+         <% for (let i = 0; i < authors.length; i++) { %>  
+        <option value="<%=authors[i].authorId%>"> <%= authors[i].firstname%> <%= authors[i].lastname%> </option>  
+      <% } %>
+      </select>
+    
+      Categories:
+      <select name="categories" required>
+          <option value="notSelected"> - select - </option>
+          <% for (let i = 0; i < categories.length; i++) { %>
+              <option value="<%= categories[i].category %>"><%= categories[i].category %></option>
+              <% } %>
+      </select><br><br>
+      Likes:
+      <input type="text" name="likes"><br><br>
+      Quote:
+      <textarea name="quote"></textarea><br>
+      <button class="btn btn-success">Add New Quote</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head.ejs")  %>
+
+<body class="text-center">
+  <%- include("../partials/nav.ejs")  %>
+    <br><br>
+    <h2>Adding New Author</h2>
+    
+    <form method="POST" action="/addAuthor" >
+        First name:
+        <input name="fname" type="text" required><br>
+        Last name:
+        <input name="lname" type="text" required><br>
+        DOB: 
+        <input name="dob" type="date"><br>
+        DOD:
+        <input name="dod" type="date"><br>
+        Sex: <br>
+        <input name="sex" type="radio" value="M" >
+        M
+        <input name="sex" type="radio" value="F" required>
+        F
+        <br>
+        Profession: 
+        <input name="profession" type="text" required><br>
+        Country:
+        <input name="country" type="text" required><br>
+        Portrait:
+        <textarea name="portrait"></textarea><br>
+        Biography: 
+        <textarea name="biography"></textarea><br>
+
+        <!-- add inputs for new author to db -->
+        <button class="btn btn-success">Add New Author</button>
+    </form>
+<script src="/js/author.js">
+</script>
+
+</body>
+</html>

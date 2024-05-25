@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs")  %>
+<body>
+      
+  <%- include("../partials/nav.ejs")  %>
+      <h2>Updating New Quote</h2>
+    <form method="POST" action="/updateQuote" >
+          <input type="hidden" name="quoteId" value="<%=quoteInfo.quoteId%>"> 
+          Quote:<textarea id="quote" name="quote"><%=quoteInfo.quote%></textarea><br>
+          Category:
+          <select name="category">
+            <%for(let i of categories){%>
+              <option 
+                <% if(i.category == quoteInfo.category){ %>
+                selected
+                <% } %>
+                value="<%=i.category%>"><%=i.category%></option>
+            <%}%>
+            </select>
+              <br>
+              Author:
+              <select name="author">
+                <%for(let i of authorInfo){%>
+                  <option 
+                    <% if(i.authorId == quoteInfo.authorId){ %>
+                    selected
+                    <% } %>
+                    value="<%=i.authorId%>"><%=i.firstName%> <%=i.lastName%></option>
+                <%}%>
+              </select>
+                  <br>
+          <button>Update Quote</button>
+      </form>
+  <script>
+
+  </script>
+
+  </body>
+  </html>
+</body>
+</html>
